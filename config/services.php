@@ -35,4 +35,9 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'github' => [
+        'client_id' => 'fb1f251955fb179f7325',
+        'client_secret' => 'ad9b8284de91b1bb8e062e65111534010d682497',
+        'redirect' => 'http://werewolf.dev/login/github/callback',
+    ],
 ];

@@ -16,9 +16,19 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
-        'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
+        'account' => $faker->name,
+        'nickname' => $faker->name,
+        'account_type' => \App\Library\App\Config::ACCOUNT_TYPE,
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
+    ];
+});
+$factory->define(App\Post::class, function ($faker) {
+    return [
+        'title' => $faker->title,
+        'content' => $faker->paragraph,
+        'user_id' => function () {
+            return factory(App\User::class)->create()->id;
+        }
     ];
 });

@@ -13,7 +13,7 @@ class CreateBehaviourSummariesTable extends Migration
      */
     public function up()
     {
-        Schema::create('behaviour_summarie', function (Blueprint $table) {
+        Schema::create('behaviour_summary', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
             $table->integer('behaviour_id');
@@ -22,7 +22,6 @@ class CreateBehaviourSummariesTable extends Migration
             $table->integer('feasibility');
             $table->integer('support');
             $table->boolean('has_logical_error')->default(false);
-            $table->timestamps();
             $table->timestamps();
         });
     }
@@ -34,6 +33,6 @@ class CreateBehaviourSummariesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('behaviour_summarie');
+        Schema::dropIfExists('behaviour_summary');
     }
 }

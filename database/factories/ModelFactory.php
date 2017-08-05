@@ -32,3 +32,14 @@ $factory->define(App\Post::class, function ($faker) {
         }
     ];
 });
+
+$factory->define(\App\Model\Player::class, function (Faker\Generator $faker) {
+
+    return [
+        'name' => $faker->name,
+        'portrait' => '',
+        'photo' => [],
+        'other_name' => [],
+        'description'=> $faker->realText(),
+    ];
+});
